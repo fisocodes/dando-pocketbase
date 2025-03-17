@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Get the source branch of the merge
+MERGE_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+# Check if the source branch is 'main'
+if [ "$MERGE_BRANCH" = "main" ]; then
+  echo "Merging from 'main' branch into other branches is not allowed!"
+  exit 1
+fi
